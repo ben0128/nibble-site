@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nibble-45j.pages.dev/sitemap.xml
