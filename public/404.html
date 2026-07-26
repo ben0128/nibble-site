@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Nibble</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%96%B1%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+           background: #0B0E14; color: #E6EDF3;
+           font: 16px/1.7 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    main { padding: 24px; }
+    .p { color: #46E8A0; }
+    .err { color: #F7605A; margin: 14px 0; }
+    a { color: #46E8A0; }
+    h1 { font-size: 1.05rem; font-weight: 600; margin: 0; }
+  </style>
+</head>
+<body>
+<main>
+  <h1><span class="p">$</span> nibble open <span id="path">/this/page</span></h1>
+  <p class="err">error: no such page (exit 1)</p>
+  <p><a href="/">&larr; back to the homepage</a></p>
+</main>
+<script>document.getElementById('path').textContent = location.pathname;</script>
+</body>
+</html>
