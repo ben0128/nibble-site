@@ -1,6 +1,6 @@
 # nibble-site
 
-Landing page for [Nibble](https://github.com/ben0128/nibble) — 530 KB zero-dependency Logitech mouse control for macOS.
+Landing page for [Nibble](https://github.com/ben0128/nibble) — under-1-MB zero-dependency Logitech mouse control for macOS.
 
 **Live:** [nibble-45j.pages.dev](https://nibble-45j.pages.dev) (Cloudflare Pages, project `nibble`)
 

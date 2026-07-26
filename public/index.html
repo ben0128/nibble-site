@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Nibble — 530 KB Logitech mouse control for macOS</title>
-  <meta name="description" content="Nibble is a 530 KB zero-dependency CLI for Logitech mice on macOS — set DPI, remap buttons, read real battery voltage. No daemon, no telemetry, no account. brew install nibble." />
+  <title>Nibble — under 1 MB Logitech mouse control for macOS</title>
+  <meta name="description" content="Nibble is an under-1-MB zero-dependency tool for Logitech mice on macOS — set DPI, remap buttons with profiles and macros, read real battery voltage. Native settings window, CLI, and menu bar. No daemon, no telemetry, no account. brew install nibble." />
   <meta property="og:title" content="Nibble — it's a mouse, not a platform." />
-  <meta property="og:description" content="A 530 KB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
+  <meta property="og:description" content="An under-1-MB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nibble-45j.pages.dev/" />
   <meta property="og:image" content="https://nibble-45j.pages.dev/og.jpg" />
@@ -14,7 +14,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nibble — it's a mouse, not a platform." />
-  <meta name="twitter:description" content="A 530 KB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
+  <meta name="twitter:description" content="An under-1-MB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
   <meta name="twitter:image" content="https://nibble-45j.pages.dev/og.jpg" />
   <link rel="canonical" href="https://nibble-45j.pages.dev/" />
   <script type="application/ld+json">
@@ -24,12 +24,12 @@
     "name": "Nibble",
     "operatingSystem": "macOS",
     "applicationCategory": "UtilitiesApplication",
-    "description": "A 530 KB zero-dependency CLI for Logitech mice on macOS — DPI, report rate, button remapping, battery voltage. No daemon, no telemetry, no account.",
+    "description": "An under-1-MB zero-dependency tool for Logitech mice on macOS — DPI, report rate, button remapping with profiles and macros, battery voltage. Native settings window, CLI, and menu bar. No daemon, no telemetry, no account.",
     "url": "https://nibble-45j.pages.dev/",
     "downloadUrl": "https://github.com/ben0128/nibble",
     "sameAs": ["https://github.com/ben0128/nibble"],
     "author": { "@type": "Person", "name": "ben0128", "url": "https://github.com/ben0128" },
-    "softwareVersion": "1.2.0",
+    "softwareVersion": "1.7.0",
     "license": "https://opensource.org/license/mit/",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
@@ -130,6 +130,8 @@
       border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
       padding: 5px 12px; border-radius: 999px;
     }
+    /* roadmap, not a feature — accent colouring here would read as "already done" */
+    .chip.muted { color: var(--soft); background: var(--panel); border-color: var(--line); }
 
     /* terminal card */
     .term {
@@ -240,6 +242,20 @@
     .req li { padding-left: 20px; position: relative; margin-top: 6px; }
     .req li::before { content: "·"; position: absolute; left: 6px; color: var(--accent); }
 
+    /* platform status row — deliberately NOT tabs: two of the three have nothing
+       to switch to, and a control that ignores clicks reads as a broken page */
+    .plat { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 30px; }
+    .plat .now {
+      font: 600 .9rem var(--mono); color: var(--ink);
+      border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+      border-radius: 10px; padding: 9px 15px;
+    }
+    .plat .now b { color: var(--accent); font-weight: 600; }
+    .plat .soon { font: 500 .86rem var(--mono); color: var(--soft); cursor: default; padding: 9px 2px; }
+    .plat-note { font-size: .88rem; color: var(--soft); margin: 14px 0 0; max-width: 68ch; }
+    .plat-note code { color: var(--ink); font-size: .92em; }
+
     /* honest strip */
     .honest { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
     .honest div { border-left: 2px solid var(--accent-dim); padding: 2px 0 2px 16px; }
@@ -292,15 +308,16 @@
       <div>
         <span class="eyebrow">The lightweight G HUB &amp; Options+ alternative</span>
         <h1>It's a mouse,<br />not a platform.</h1>
-        <p class="sub">A nibble is half a byte. This one is a 530 KB binary that runs your Logitech mouse from the macOS terminal — no daemon, no account, no telemetry.</p>
+        <p class="sub">A nibble is half a byte. This one is an under-1-MB binary that runs your Logitech mouse — native settings window, menu bar, or terminal. No daemon, no account, no telemetry.</p>
         <div class="cta-row">
           <button class="btn btn-brew" data-copy="brew tap ben0128/nibble && brew trust ben0128/nibble && brew install nibble" title="brew tap ben0128/nibble && brew trust ben0128/nibble && brew install nibble" aria-label="copy the Homebrew install command"><span class="p">$</span> brew install nibble <span class="cp">⧉</span></button>
           <a target="_blank" rel="noopener" class="btn btn-primary" href="https://github.com/ben0128/nibble">Get Nibble on GitHub</a>
         </div>
         <div class="hero-meta">
-          <span class="chip">530 KB binary</span>
+          <span class="chip">Under 1 MB</span>
           <span class="chip">Zero dependencies</span>
           <span class="chip">Open source · MIT</span>
+          <span class="chip muted">macOS today · Linux &amp; Windows soon</span>
         </div>
       </div>
 
@@ -325,16 +342,19 @@
 <span class="t-line o">63% 3.92V charging</span>
 <span class="t-line gap"></span>
 <span class="t-line"><span class="p">$</span> <span class="c">nibble doctor</span></span>
-<span class="t-line o">Nibble doctor v1.2.0</span>
+<span class="t-line o">Nibble doctor v1.7.0</span>
 <span class="t-line gap"></span>
 <span class="t-line o"> <span class="ok">✅</span> <span class="k">input-monitoring</span>  granted</span>
-<span class="t-line o"> <span class="ok">✅</span> <span class="k">receiver</span>          046D:C539</span>
+<span class="t-line o"> <span class="ok">✅</span> <span class="k">transports</span>        receiver 046D:C539</span>
 <span class="t-line o"> <span class="ok">✅</span> <span class="k">device</span>            G502 LIGHTSPEED · HID++ 4.2</span>
 <span class="t-line o"> <span class="ok">✅</span> <span class="k">battery</span>           63% charging (0x1001)</span>
 <span class="t-line o"> <span class="ok">✅</span> <span class="k">remap-capable</span>     0x8110 MouseButtonSpy</span>
-<span class="t-line o"> <span class="ok">✅</span> <span class="k">config</span>            ~/.config/nibble.json · 2 maps</span>
-<span class="t-line o"> •  <span class="k">menubar</span>           running (remap engine)</span>
+<span class="t-line o"> <span class="ok">✅</span> <span class="k">config</span>            ~/.config/nibble.json · 2 maps · profile Gaming</span>
+<span class="t-line o"> <span class="ok">✅</span> <span class="k">remap-engine</span>      running · 2 mapping(s) · 0x8110 spy</span>
+<span class="t-line o"> <span class="ok">✅</span> <span class="k">menubar</span>           running (remap engine host)</span>
+<span class="t-line o"> •  <span class="k">login-startup</span>     on</span>
 <span class="t-line o"> •  <span class="k">login-replay</span>      installed</span>
+<span class="t-line o"> •  <span class="k">low-battery-alert</span> below 20%</span>
 <span class="t-line gap"></span>
 <span class="t-line o"> <span class="ok">All good.</span></span>
 <span class="t-line"><span class="p">$</span> <span class="cursor"></span></span></pre>
@@ -346,7 +366,7 @@
   <section id="compare">
     <div class="wrap">
       <span class="eyebrow">The pitch, to scale</span>
-      <h2>G HUB is a 4 GB install. Nibble is 530 KB.</h2>
+      <h2>G HUB is a 4 GB install. Nibble is under 1 MB.</h2>
       <div class="bars">
         <div class="bar-row">
           <span class="bar-name">G HUB</span>
@@ -358,10 +378,10 @@
         </div>
         <div class="bar-row">
           <span class="bar-name">Nibble</span>
-          <div class="bar-track"><div class="bar nib"></div><span class="after-label">530 KB</span></div>
+          <div class="bar-track"><div class="bar nib"></div><span class="after-label">720 KB</span></div>
         </div>
       </div>
-      <p class="bars-note">Drawn to scale, 530 KB would be 0.12 px wide — we rounded up so you can see it.</p>
+      <p class="bars-note">720 KB as of v1.7.0. Drawn to scale that bar would be 0.16 px wide — we rounded up so you can see it.</p>
     </div>
   </section>
 
@@ -372,7 +392,7 @@
       <h2>Small, native, and honest.</h2>
       <div class="grid">
         <div class="card">
-          <h3>530 KB. Zero dependencies.</h3>
+          <h3>Under 1 MB. Zero dependencies.</h3>
           <p>One static binary built with make. No runtime, no installer, no framework — nothing to keep updated.</p>
         </div>
         <div class="card">
@@ -381,7 +401,7 @@
         </div>
         <div class="card">
           <h3>Remap any button. No G HUB.</h3>
-          <p>The button list is read from the device itself, so any Logitech mouse just works. Map keystrokes or system actions — quit the menu bar and factory behavior is back instantly.</p>
+          <p>The button list is read from the device itself, so any Logitech mouse just works. Bind a keystroke, a macro, or a system action — and switch whole sets with profiles. Quit the menu bar and factory behavior is back instantly.</p>
         </div>
         <div class="card">
           <h3>Verified writes. Real volts.</h3>
@@ -389,11 +409,23 @@
         </div>
         <div class="card">
           <h3>Speaks HID++ 4.2, natively.</h3>
-          <p>Raw protocol over your Lightspeed / Unifying receiver through IOKit — the same language G HUB speaks.</p>
+          <p>Raw protocol through IOKit over a Lightspeed / Unifying receiver, a USB cable, or Bluetooth — the same language G HUB speaks.</p>
         </div>
         <div class="card">
-          <h3>Set once. Replays at login.</h3>
-          <p>Your config is a tiny JSON; a one-shot launchd agent re-applies it at login and exits. Every read command speaks --json, for scripts and agents.</p>
+          <h3>A real window, not a web view.</h3>
+          <p>Hand-written AppKit: a settings window with DPI, report rate, lighting and a button editor, plus a menu bar that draws the battery inside the mouse icon. No Electron, no SwiftUI runtime.</p>
+        </div>
+        <div class="card">
+          <h3>It tells you why it stopped.</h3>
+          <p>Permissions and engine state are on screen, each failure next to the button that fixes it — and nibble doctor prints the same checks with a concrete next step. Every read command speaks --json, for scripts and agents.</p>
+        </div>
+        <div class="card">
+          <h3>Nothing to take on faith.</h3>
+          <p>MIT, one directory of Swift, no dependencies to audit. 74 tests cover the protocol framing, parsing and config merges — clone it and make test.</p>
+        </div>
+        <div class="card">
+          <h3>Set once. Comes back at login.</h3>
+          <p>Your config is a tiny JSON. One switch registers the menu bar as a login item so remaps survive a reboot; another re-applies DPI, rate and lighting through a one-shot launchd agent that exits immediately.</p>
         </div>
       </div>
     </div>
@@ -421,13 +453,15 @@
               <tr><td>nibble onboard info|backup</td><td>Onboard memory info / read-only full dump</td></tr>
               <tr><td>nibble config init|show</td><td>Create from current state / print ~/.config/nibble.json</td></tr>
               <tr><td>nibble apply</td><td>Apply the config file (runtime writes)</td></tr>
-              <tr><td>nibble replay install|uninstall</td><td>Auto-apply at login via a one-shot launchd agent</td></tr>
+              <tr><td>nibble replay install|uninstall</td><td>Auto-apply DPI / rate / lighting at login via a one-shot launchd agent</td></tr>
+              <tr><td>nibble startup [on|off]</td><td>Start the menu bar at login, so button remaps survive a reboot</td></tr>
               <tr><td>nibble buttons</td><td>Enumerate programmable buttons (0x1b04 MX-series / 0x8110 G-series)</td></tr>
               <tr><td>nibble spy [seconds]</td><td>Live button-event monitor, G-series diagnostic</td></tr>
-              <tr><td>nibble remap</td><td>Interactive remap: press a button → assign keystroke / system action / disable</td></tr>
+              <tr><td>nibble remap</td><td>Interactive remap: press a button → assign keystroke / macro / system action / disable</td></tr>
+              <tr><td>nibble profile [use|copy|new|rename|delete]</td><td>Switch between whole sets of button mappings</td></tr>
               <tr><td>nibble menubar</td><td>Interactive menu bar: battery + DPI/rate/RGB; hosts the remap engine (~15 MB, opt-in)</td></tr>
-              <tr><td>Nibble.app</td><td>Menu bar launched from Finder (make app) — adds low-battery notifications</td></tr>
-              <tr><td>nibble ui</td><td>Native settings window (General + Buttons tabs); quits when closed</td></tr>
+              <tr><td>Nibble.app</td><td>Menu bar launched from Finder (make install-app) — adds low-battery notifications and the login item</td></tr>
+              <tr><td>nibble ui</td><td>Native settings window: General (DPI, rate, lighting, login, alerts, health) + Buttons (remap table with profiles)</td></tr>
             </tbody>
           </table>
         </div>
@@ -444,10 +478,17 @@
       <span class="eyebrow">Get started</span>
       <h2>Three lines to a configured mouse.</h2>
 
+      <div class="plat">
+        <span class="now">macOS 13+ &nbsp;<b>✓ shipping</b></span>
+        <span class="soon">Linux · coming soon</span>
+        <span class="soon">Windows · coming soon</span>
+      </div>
+      <p class="plat-note">Only the transport touches OS APIs: <code>HIDPP.swift</code> speaks the protocol with nothing but Foundation, so porting the CLI means rewriting one file — hidraw on Linux, <code>HidD_*</code> on Windows. The AppKit menu bar and settings window would need native equivalents.</p>
+
       <div class="duo">
         <div class="panel">
           <h3>Install</h3>
-          <p class="hint">macOS with the Swift toolchain (xcode-select --install). Logitech mouse on a USB receiver — Lightspeed / Unifying; Bluetooth-direct not yet. Tested on G502 LIGHTSPEED.</p>
+          <p class="hint">macOS 13+ with the Swift toolchain (xcode-select --install). Logitech mouse on a Lightspeed / Unifying receiver, over a USB cable, or paired directly over Bluetooth. Tested on G502 LIGHTSPEED via receiver; the Bluetooth-direct path follows the HID++ spec but is not yet verified on hardware.</p>
           <pre class="code"><button class="copy" data-copy="brew tap ben0128/nibble
 brew trust ben0128/nibble
 brew install nibble">copy</button><span class="n">brew tap</span> ben0128/nibble
@@ -459,9 +500,9 @@ make
 ./nibble status">copy</button><span class="n">git clone</span> https://github.com/ben0128/nibble <span class="s">&amp;&amp;</span> <span class="n">cd</span> nibble
 <span class="n">make</span>
 ./nibble status</pre>
-          <p class="hint" style="margin:14px 0 0">make app builds Nibble.app — the same menu bar launched from Finder, plus low-battery notifications.</p>
+          <p class="hint" style="margin:14px 0 0">make install-app puts Nibble.app in /Applications — the same menu bar launched from Finder, plus low-battery notifications and “start at login”.</p>
           <div class="callout">
-            <b>First run:</b> <span>grant Input Monitoring — System Settings → Privacy &amp; Security → Input Monitoring → enable your terminal, then re-run. Error</span> <code>0xE00002E2</code> <span>just means the permission is missing; no restart needed. Button remapping additionally needs Accessibility (prompted on first engine start).</span>
+            <b>First run:</b> <span>grant Input Monitoring — System Settings → Privacy &amp; Security → Input Monitoring → enable your terminal, then re-run. Error</span> <code>0xE00002E2</code> <span>just means the permission is missing; no restart needed. Button remapping additionally needs Accessibility — the engine asks once and retries on its own, so remaps start working seconds after you grant it.</span>
           </div>
         </div>
 
@@ -472,14 +513,19 @@ make
   <span class="k">"dpi"</span>: <span class="n">1600</span>,
   <span class="k">"reportRateHz"</span>: <span class="n">1000</span>,
   <span class="k">"rgb"</span>: <span class="s">"off"</span>,
-  <span class="k">"buttonMaps"</span>: {
-    <span class="k">"G502 LIGHTSPEED Wireless Gaming Mouse"</span>: {
-      <span class="k">"G7"</span>: { <span class="k">"type"</span>: <span class="s">"keys"</span>, <span class="k">"keys"</span>: <span class="s">"cmd+space"</span> },
-      <span class="k">"G8"</span>: { <span class="k">"type"</span>: <span class="s">"system"</span>, <span class="k">"action"</span>: <span class="s">"mission-control"</span> }
+  <span class="k">"lowBatteryPercent"</span>: <span class="n">20</span>,
+  <span class="k">"activeProfile"</span>: <span class="s">"Gaming"</span>,
+  <span class="k">"buttonProfiles"</span>: {
+    <span class="k">"Gaming"</span>: {
+      <span class="k">"G502 LIGHTSPEED Wireless Gaming Mouse"</span>: {
+        <span class="k">"G7"</span>: { <span class="k">"type"</span>: <span class="s">"keys"</span>,   <span class="k">"keys"</span>: <span class="s">"cmd+space"</span> },
+        <span class="k">"G8"</span>: { <span class="k">"type"</span>: <span class="s">"macro"</span>,  <span class="k">"keys"</span>: <span class="s">"cmd+c, 150ms, cmd+v"</span> },
+        <span class="k">"G9"</span>: { <span class="k">"type"</span>: <span class="s">"system"</span>, <span class="k">"action"</span>: <span class="s">"mission-control"</span> }
+      }
     }
   }
 }</pre>
-          <p class="hint" style="margin:14px 0 0">Also available: wheelMode "free" / "ratchet" and wheelThreshold 1–254 (MX-series). Then nibble apply — or nibble replay install to re-apply at every login.</p>
+          <p class="hint" style="margin:14px 0 0">Also available: lowBatteryNotify false to silence alerts, and wheelMode "free" / "ratchet" with wheelThreshold 1–254 (MX-series). Then nibble apply — or nibble replay install to re-apply at every login. A config from an older version, with mappings directly under buttonMaps, is read as the Default profile and migrated on first write.</p>
         </div>
       </div>
 
