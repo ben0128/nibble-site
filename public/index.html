@@ -253,9 +253,17 @@
       border-radius: 10px; padding: 9px 15px;
     }
     .plat .now b { color: var(--accent); font-weight: 600; }
+    .plat .beta {
+      font: 600 .9rem var(--mono); color: var(--ink);
+      border: 1.5px solid color-mix(in srgb, var(--amber) 50%, transparent);
+      background: color-mix(in srgb, var(--amber) 8%, var(--bg));
+      border-radius: 10px; padding: 9px 15px;
+    }
+    .plat .beta b { color: var(--amber); font-weight: 600; }
     .plat .soon { font: 500 .86rem var(--mono); color: var(--soft); cursor: default; padding: 9px 2px; }
     .plat-note { font-size: .88rem; color: var(--soft); margin: 14px 0 0; max-width: 68ch; }
     .plat-note code { color: var(--ink); font-size: .92em; }
+    .plat-note b { color: var(--amber); font-weight: 600; }
 
     /* honest strip */
     .honest { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
@@ -318,7 +326,7 @@
           <span class="chip">Under 1 MB</span>
           <span class="chip">Zero dependencies</span>
           <span class="chip">Open source · MIT</span>
-          <span class="chip muted">macOS today · Linux &amp; Windows soon</span>
+          <span class="chip muted">macOS today · Windows beta · Linux soon</span>
         </div>
       </div>
 
@@ -481,10 +489,10 @@
 
       <div class="plat">
         <span class="now">macOS 13+ &nbsp;<b>✓ shipping</b></span>
+        <span class="beta">Windows &nbsp;<b>β beta</b></span>
         <span class="soon">Linux · coming soon</span>
-        <span class="soon">Windows · coming soon</span>
       </div>
-      <p class="plat-note">Only the transport touches OS APIs: <code>HIDPP.swift</code> speaks the protocol with nothing but Foundation, so porting the CLI means rewriting one file — hidraw on Linux, <code>HidD_*</code> on Windows. The AppKit menu bar and settings window would need native equivalents.</p>
+      <p class="plat-note">The Windows port is <b>beta</b>: the CLI and tray are built, pass the same protocol vectors as the macOS binary, and CI exercises every no-device path on real Windows — but none of it has touched a real mouse yet. Hardware validation is still to come; the release and Scoop package ship only after it passes. Follow along <a target="_blank" rel="noopener" href="https://github.com/ben0128/nibble">on GitHub</a>. Linux comes after — the protocol core is OS-free, so a port is one transport file (hidraw).</p>
 
       <div class="duo">
         <div class="panel">
