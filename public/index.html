@@ -6,7 +6,7 @@
   <title>Nibble — under 1 MB Logitech mouse control for macOS</title>
   <meta name="description" content="Nibble is an under-1-MB zero-dependency tool for Logitech mice on macOS — set DPI, remap buttons with profiles and macros, read real battery voltage. Native settings window, CLI, and menu bar. No daemon, no telemetry, no account. brew install --cask nibble." />
   <meta property="og:title" content="Nibble — it's a mouse, not a platform." />
-  <meta property="og:description" content="An under-1-MB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
+  <meta property="og:description" content="An under-1-MB download that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nibble-45j.pages.dev/" />
   <meta property="og:image" content="https://nibble-45j.pages.dev/og.jpg" />
@@ -14,7 +14,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nibble — it's a mouse, not a platform." />
-  <meta name="twitter:description" content="An under-1-MB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
+  <meta name="twitter:description" content="An under-1-MB download that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
   <meta name="twitter:image" content="https://nibble-45j.pages.dev/og.jpg" />
   <meta name="keywords" content="G HUB alternative, Logi Options+ alternative, Logitech mouse macOS, logitech dpi terminal, Logitech battery menu bar, G502 LIGHTSPEED, MX Master 3, remap Logitech buttons macOS, HID++ 2.0, Solaar for macOS, logiops, Lightspeed receiver, Unifying, IOKit HID, brew install --cask nibble" />
   <link rel="canonical" href="https://nibble-45j.pages.dev/" />
@@ -387,10 +387,10 @@
         </div>
         <div class="bar-row">
           <span class="bar-name">Nibble</span>
-          <div class="bar-track"><div class="bar nib"></div><span class="after-label">720 KB</span></div>
+          <div class="bar-track"><div class="bar nib"></div><span class="after-label">543 KB</span></div>
         </div>
       </div>
-      <p class="bars-note">A 543 KB download as of v1.8.1 (universal app; ~720 KB of binary per architecture). Drawn to scale that bar would be ~0.1 px wide — we rounded up so you can see it.</p>
+      <p class="bars-note">A 543 KB download as of v1.8.1 (universal app; ~750 KB of binary per architecture). Drawn to scale that bar would be ~0.1 px wide — we rounded up so you can see it.</p>
     </div>
   </section>
 
@@ -430,7 +430,7 @@
         </div>
         <div class="card">
           <h3>Nothing to take on faith.</h3>
-          <p>MIT, one directory of Swift, no dependencies to audit. 74 tests cover the protocol framing, parsing and config merges — clone it and make test.</p>
+          <p>MIT, one directory of Swift, no dependencies to audit. 244 checks cover the protocol framing, parsing and config merges — clone it and make test — and a mutation audit proves they bite.</p>
         </div>
         <div class="card">
           <h3>Set once. Comes back at login.</h3>
@@ -458,7 +458,7 @@
               <tr><td>nibble rate [125|250|500|1000]</td><td>Get / set report rate in Hz</td></tr>
               <tr><td>nibble rgb off|show</td><td>Lights off (power saving) / list zones and effects</td></tr>
               <tr><td>nibble mode [host|onboard]</td><td>Get / set control-mode flag</td></tr>
-              <tr><td>nibble wheel free|ratchet</td><td>SmartShift wheel mode — MX-series only (untested)</td></tr>
+              <tr><td>nibble wheel free|ratchet [threshold N]</td><td>SmartShift wheel mode — MX-series only (untested)</td></tr>
               <tr><td>nibble onboard info|backup</td><td>Onboard memory info / read-only full dump</td></tr>
               <tr><td>nibble config init|show</td><td>Create from current state / print ~/.config/nibble.json</td></tr>
               <tr><td>nibble apply</td><td>Apply the config file (runtime writes)</td></tr>
@@ -467,9 +467,10 @@
               <tr><td>nibble buttons</td><td>Enumerate programmable buttons (0x1b04 MX-series / 0x8110 G-series)</td></tr>
               <tr><td>nibble spy [seconds]</td><td>Live button-event monitor, G-series diagnostic</td></tr>
               <tr><td>nibble remap</td><td>Interactive remap: press a button → assign keystroke / macro / system action / disable</td></tr>
-              <tr><td>nibble profile [use|copy|new|rename|delete]</td><td>Switch between whole sets of button mappings</td></tr>
+              <tr><td>nibble profile [list|use|new|copy|rename|delete]</td><td>Switch between whole sets of button mappings</td></tr>
               <tr><td>nibble menubar</td><td>Interactive menu bar: battery + DPI/rate/RGB; hosts the remap engine (~15 MB, opt-in)</td></tr>
               <tr><td>Nibble.app</td><td>Menu bar launched from Finder — comes with the cask (or make install-app); adds low-battery notifications and the login item</td></tr>
+              <tr><td>nibble version</td><td>Print the version (--json on this one too)</td></tr>
               <tr><td>nibble ui</td><td>Native settings window: General (DPI, rate, lighting, login, alerts, health) + Buttons (remap table with profiles)</td></tr>
             </tbody>
           </table>

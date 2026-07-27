@@ -28,12 +28,14 @@ sed -i '' -E \
   -e "s|(\"softwareVersion\": \")[0-9.]+(\")|\1${VERSION}\2|" \
   -e "s|(Nibble doctor v)[0-9.]+|\1${VERSION}|" \
   -e "s|(A )[0-9]+( KB download as of v)[0-9.]+|\1${ZIP_KB}\2${VERSION}|" \
+  -e "s|(class=\"after-label\">)[0-9]+ KB<|\1${ZIP_KB} KB<|" \
   "$STAGE/index.html"
 
 # Fail loud if a stamp didn't land — that means the page text changed shape.
 grep -q "\"softwareVersion\": \"${VERSION}\"" "$STAGE/index.html"
 grep -q "Nibble doctor v${VERSION}" "$STAGE/index.html"
 grep -q "A ${ZIP_KB} KB download as of v${VERSION}" "$STAGE/index.html"
+grep -q "class=\"after-label\">${ZIP_KB} KB<" "$STAGE/index.html"
 echo "stamped: v${VERSION}, ${ZIP_KB} KB download"
 
 wrangler pages deploy "$STAGE" --project-name nibble --branch main --commit-dirty=true
