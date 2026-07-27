@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Nibble — under 1 MB Logitech mouse control for macOS</title>
-  <meta name="description" content="Nibble is an under-1-MB zero-dependency tool for Logitech mice on macOS — set DPI, remap buttons with profiles and macros, read real battery voltage. Native settings window, CLI, and menu bar. No daemon, no telemetry, no account. brew install nibble." />
+  <meta name="description" content="Nibble is an under-1-MB zero-dependency tool for Logitech mice on macOS — set DPI, remap buttons with profiles and macros, read real battery voltage. Native settings window, CLI, and menu bar. No daemon, no telemetry, no account. brew install --cask nibble." />
   <meta property="og:title" content="Nibble — it's a mouse, not a platform." />
   <meta property="og:description" content="An under-1-MB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
   <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="Nibble — it's a mouse, not a platform." />
   <meta name="twitter:description" content="An under-1-MB binary that speaks HID++ 4.2 to your Logitech mouse. No daemon, no telemetry, no account." />
   <meta name="twitter:image" content="https://nibble-45j.pages.dev/og.jpg" />
-  <meta name="keywords" content="G HUB alternative, Logi Options+ alternative, Logitech mouse macOS, logitech dpi terminal, Logitech battery menu bar, G502 LIGHTSPEED, MX Master 3, remap Logitech buttons macOS, HID++ 2.0, Solaar for macOS, logiops, Lightspeed receiver, Unifying, IOKit HID, brew install nibble" />
+  <meta name="keywords" content="G HUB alternative, Logi Options+ alternative, Logitech mouse macOS, logitech dpi terminal, Logitech battery menu bar, G502 LIGHTSPEED, MX Master 3, remap Logitech buttons macOS, HID++ 2.0, Solaar for macOS, logiops, Lightspeed receiver, Unifying, IOKit HID, brew install --cask nibble" />
   <link rel="canonical" href="https://nibble-45j.pages.dev/" />
   <script type="application/ld+json">
   {
@@ -30,7 +30,7 @@
     "downloadUrl": "https://github.com/ben0128/nibble",
     "sameAs": ["https://github.com/ben0128/nibble"],
     "author": { "@type": "Person", "name": "ben0128", "url": "https://github.com/ben0128" },
-    "softwareVersion": "1.7.0",
+    "softwareVersion": "1.8.1",
     "license": "https://opensource.org/license/mit/",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
@@ -309,9 +309,9 @@
       <div>
         <span class="eyebrow">The lightweight G HUB &amp; Options+ alternative</span>
         <h1>It's a mouse,<br />not a platform.</h1>
-        <p class="sub">A nibble is half a byte. This one is an under-1-MB binary that runs your Logitech mouse — native settings window, menu bar, or terminal. No daemon, no account, no telemetry.</p>
+        <p class="sub">A nibble is half a byte. This one is an under-1-MB download that runs your Logitech mouse — native settings window, menu bar, or terminal. No daemon, no account, no telemetry.</p>
         <div class="cta-row">
-          <button class="btn btn-brew" data-copy="brew tap ben0128/nibble && brew trust ben0128/nibble && brew install nibble" title="brew tap ben0128/nibble && brew trust ben0128/nibble && brew install nibble" aria-label="copy the Homebrew install command"><span class="p">$</span> brew install nibble <span class="cp">⧉</span></button>
+          <button class="btn btn-brew" data-copy="brew tap ben0128/nibble && brew trust ben0128/nibble && brew install --cask nibble" title="brew tap ben0128/nibble && brew trust ben0128/nibble && brew install --cask nibble" aria-label="copy the Homebrew install command"><span class="p">$</span> brew install --cask nibble <span class="cp">⧉</span></button>
           <a target="_blank" rel="noopener" class="btn btn-primary" href="https://github.com/ben0128/nibble">Get Nibble on GitHub</a>
         </div>
         <div class="hero-meta">
@@ -343,7 +343,7 @@
 <span class="t-line o">63% 3.92V charging</span>
 <span class="t-line gap"></span>
 <span class="t-line"><span class="p">$</span> <span class="c">nibble doctor</span></span>
-<span class="t-line o">Nibble doctor v1.7.0</span>
+<span class="t-line o">Nibble doctor v1.8.1</span>
 <span class="t-line gap"></span>
 <span class="t-line o"> <span class="ok">✅</span> <span class="k">input-monitoring</span>  granted</span>
 <span class="t-line o"> <span class="ok">✅</span> <span class="k">transports</span>        receiver 046D:C539</span>
@@ -382,7 +382,7 @@
           <div class="bar-track"><div class="bar nib"></div><span class="after-label">720 KB</span></div>
         </div>
       </div>
-      <p class="bars-note">720 KB as of v1.7.0. Drawn to scale that bar would be 0.16 px wide — we rounded up so you can see it.</p>
+      <p class="bars-note">A 543 KB download as of v1.8.1 (universal app; ~720 KB of binary per architecture). Drawn to scale that bar would be ~0.1 px wide — we rounded up so you can see it.</p>
     </div>
   </section>
 
@@ -461,7 +461,7 @@
               <tr><td>nibble remap</td><td>Interactive remap: press a button → assign keystroke / macro / system action / disable</td></tr>
               <tr><td>nibble profile [use|copy|new|rename|delete]</td><td>Switch between whole sets of button mappings</td></tr>
               <tr><td>nibble menubar</td><td>Interactive menu bar: battery + DPI/rate/RGB; hosts the remap engine (~15 MB, opt-in)</td></tr>
-              <tr><td>Nibble.app</td><td>Menu bar launched from Finder (make install-app) — adds low-battery notifications and the login item</td></tr>
+              <tr><td>Nibble.app</td><td>Menu bar launched from Finder — comes with the cask (or make install-app); adds low-battery notifications and the login item</td></tr>
               <tr><td>nibble ui</td><td>Native settings window: General (DPI, rate, lighting, login, alerts, health) + Buttons (remap table with profiles)</td></tr>
             </tbody>
           </table>
@@ -489,21 +489,21 @@
       <div class="duo">
         <div class="panel">
           <h3>Install</h3>
-          <p class="hint">macOS 13+ with the Swift toolchain (xcode-select --install). Logitech mouse on a Lightspeed / Unifying receiver, over a USB cable, or paired directly over Bluetooth. Tested on G502 LIGHTSPEED via receiver; the Bluetooth-direct path follows the HID++ spec but is not yet verified on hardware.</p>
+          <p class="hint">macOS 13+, no toolchain needed — the cask ships a prebuilt universal app with the CLI included. Logitech mouse on a Lightspeed / Unifying receiver, over a USB cable, or paired directly over Bluetooth. Tested on G502 LIGHTSPEED via receiver; the Bluetooth-direct path follows the HID++ spec but is not yet verified on hardware.</p>
           <pre class="code"><button class="copy" data-copy="brew tap ben0128/nibble
 brew trust ben0128/nibble
-brew install nibble">copy</button><span class="n">brew tap</span> ben0128/nibble
+brew install --cask nibble">copy</button><span class="n">brew tap</span> ben0128/nibble
 <span class="n">brew trust</span> ben0128/nibble
-<span class="n">brew install</span> nibble</pre>
+<span class="n">brew install</span> --cask nibble</pre>
           <p class="hint" style="margin:14px 0 8px">Or build from source (Command Line Tools are enough):</p>
           <pre class="code"><button class="copy" data-copy="git clone https://github.com/ben0128/nibble && cd nibble
 make
 ./nibble status">copy</button><span class="n">git clone</span> https://github.com/ben0128/nibble <span class="s">&amp;&amp;</span> <span class="n">cd</span> nibble
 <span class="n">make</span>
 ./nibble status</pre>
-          <p class="hint" style="margin:14px 0 0">make install-app puts Nibble.app in /Applications — the same menu bar launched from Finder, plus low-battery notifications and “start at login”.</p>
+          <p class="hint" style="margin:14px 0 0">The cask already puts Nibble.app in /Applications. Building from source instead? make install-app does the same — menu bar launched from Finder, low-battery notifications, “start at login”.</p>
           <div class="callout">
-            <b>First run:</b> <span>grant Input Monitoring — System Settings → Privacy &amp; Security → Input Monitoring → enable your terminal, then re-run. Error</span> <code>0xE00002E2</code> <span>just means the permission is missing; no restart needed. Button remapping additionally needs Accessibility — the engine asks once and retries on its own, so remaps start working seconds after you grant it.</span>
+            <b>First run:</b> <span>grant Input Monitoring — System Settings → Privacy &amp; Security → Input Monitoring → enable Nibble (or your terminal when using the CLI), then re-run. Error</span> <code>0xE00002E2</code> <span>just means the permission is missing; no restart needed. Button remapping additionally needs Accessibility — the engine asks once and retries on its own, so remaps start working seconds after you grant it.</span>
           </div>
         </div>
 
